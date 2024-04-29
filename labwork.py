@@ -11,3 +11,5 @@ def main():
         image = cv2.imdecode(np.frombuffer(file_bytes, np.uint8), -1)
         st.image(image, caption="Uploaded Image", use_column_width=True)
 
+if __name__ == "__main__":
+    main()
