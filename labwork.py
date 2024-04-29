@@ -1,5 +1,6 @@
 import streamlit as st
 import cv2
+from PIL import Image
 import numpy as np
 
 def main():
@@ -11,10 +12,11 @@ def main():
         nparr = np.frombuffer(file_bytes, np.uint8)
         image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-        # Display the image using OpenCV
-        cv2.imshow("Uploaded Image", image)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        # Convert OpenCV image to PIL format
+        pil_image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+        
+        # Display the image using Streamlit
+        st.image(pil_image, caption="Uploaded Image", use_column_width=True)
 
 if __name__ == "__main__":
     main()
