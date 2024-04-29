@@ -10,7 +10,11 @@ def main():
         file_bytes = uploaded_file.read()
         nparr = np.frombuffer(file_bytes, np.uint8)
         image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-        st.image(image, caption="Uploaded Image", use_column_width=True)
+
+        # Display the image using OpenCV
+        cv2.imshow("Uploaded Image", image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
