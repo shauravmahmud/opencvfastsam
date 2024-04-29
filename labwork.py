@@ -1,5 +1,6 @@
 import streamlit as st
 import cv2
+import numpy as np
 
 def brighten_image(image, amount):
     img_bright = cv2.convertScaleAbs(image, beta=amount)
