@@ -1,3 +1,3 @@
 opencv-python-headless
 git+https://github.com/CASIA-IVA-Lab/FastSAM.git
-torch==1.13.1+cu11.7  # Assuming CUDA 11.7 and compatible PyTorch version 1.13.1
+torch==1.13.1+cpu  # Assuming Streamlit supports PyTorch 1.13.1 CPU version
